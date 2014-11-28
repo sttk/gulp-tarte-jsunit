@@ -46,7 +46,17 @@ gulp.task('unit', function() {
       console.log("!ERROR: The option `js' should be specified js path.");
       return;
     }
+
     jsunit.run(js, end);
+    // This callback function can be set as an object of which properties are:
+    //   { pass: cb0,  // If test passed.
+    //     fail: cb1,  // If test failed.
+    //     rterr: cb2, // If a error was raised in a test code.
+    //     pgerr: cb3  // If js code evaluation failed.
+    //   }
+    // And above code is same as:
+    //   jsunit.run(js, { pass:end, fail:end, rterr:end });
+
   });
 }).help = {
   '': 'runs a unit test.',
