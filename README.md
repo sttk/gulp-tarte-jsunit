@@ -11,3 +11,8 @@ Install `gulp-tarte-jsunit` with npm:
 ```bash
 $ npm install --save-dev gulp-tarte-jsunit
 ```
+
+[npm-image]: http://img.shields.io/badge/npm-v0.2.0-blue.svg
+[npm-url]: https://www.npmjs.org/package/gulp-tarte-jsunit
+[travis-image]: https://travis-ci.org/sttk/gulp-tarte-jsunit.svg?branch=master
+[travis-url]: https://travis-ci.org/sttk/gulp-tarte-jsunit
