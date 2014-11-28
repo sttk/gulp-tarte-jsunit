@@ -1,0 +1,17 @@
+* Run 'test.js'
+
+  $ gulp unit --js=tests/test.js
+
+* Run 'test.js' and output its result to the file 'test.json'
+
+  $ gulp unit --js=tests/test.js --report-file=tests/test.json
+
+* Show the result on a Web browser.
+
+  URL: file:///this/directory/path/tarte-jsunit-view.html?json=test.json
+
+
+NOTE:
+  tarte-jsunit-view.* files in this directory are the copys from:
+
+    ../lib/tarte-jsunit/view/

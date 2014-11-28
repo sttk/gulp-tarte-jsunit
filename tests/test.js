@@ -131,6 +131,24 @@ testsuite('Unit test sample', function() {
       this.pass(msg);
     }
    });
+   this.scene('#repeat', {
+    repeat: 3,
+    run:function() {
+      this.pass('This process is repeated 3 times sequencially.');
+    }
+   });
+   this.scene('#pre and #post', {
+    repeat: 3,
+    run:function() {
+      this.pass('run function.');
+    },
+    pre:function() {
+      this.message("This function is called before 'run' function.");
+    },
+    post:function() {
+      this.message("This function is called after 'run' function.");
+    }
+   });
    this.scene('#commons', function() {
     this.commons({
      mkar1:function(v0) {
