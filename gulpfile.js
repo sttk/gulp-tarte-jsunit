@@ -5,7 +5,6 @@ var ghelp = require('gulp-showhelp');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var grunseq = require('gulp-run-seq');
-var events = require('events');
 var mapstream = require('map-stream');
 
 var jsunit = require('./index.js');
@@ -47,9 +46,7 @@ gulp.task('unit', function() {
       console.log("!ERROR: The option `js' should be specified js path.");
       return;
     }
-    jsunit.run(js);
-
-    end();
+    jsunit.run(js, end);
   });
 }).help = {
   '': 'runs a unit test.',
