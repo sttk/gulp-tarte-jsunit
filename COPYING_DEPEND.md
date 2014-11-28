@@ -13,7 +13,7 @@ This module is a part of `js.node` package in `tarte` project.
 v0.2.0
 
 ###Project URL
-[http://sourceforge.net/projects/tarte/](http://sourceforge.net/projects/tarte/)
+[https://sourceforge.net/projects/tarte/](https://sourceforge.net/projects/tarte/)
 
 ###License
 GNU Lesser Public License version 3

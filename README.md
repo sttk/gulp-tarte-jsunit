@@ -83,6 +83,13 @@ Copyright (C) 2014 Takayuki Sato.
 `gulp-tarte-jsunit` is free software under [MIT](http://opensource.org/licenses/MIT) License.
 See the file LICENSE in this distribution for more details.
 
+### Dependencies
+
+* `tarte-jsunit` in [tarte/js.node](https://sourceforge.net/projects/tarte/) is free software under [LGPL](http://opensource.org/licenses/lgpl-3.0.html) License.
+
+* `JSON-js` is [public domain](http://creativecommons.org/licenses/publicdomain/) software.
+
+See the file COPYING_DEPEND.md in this distribution for more details.
 
 [npm-image]: http://img.shields.io/badge/npm-v0.2.0-blue.svg
 [npm-url]: https://www.npmjs.org/package/gulp-tarte-jsunit
