@@ -1,0 +1,15 @@
+{
+  "eqnull"    : true,
+  "supernew"  : true,
+  "newcap"    : false,
+  "noempty"   : false,
+  "undef"     : true,
+  "node"      : true,
+
+  "globals"   : {
+    "testsuite" : false,
+    "Ascii"     : false,
+    "Async"     : false,
+    "tarte"     : false
+  }
+}
