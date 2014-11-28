@@ -22,10 +22,7 @@ GNU Lesser Public License version 3
 As a Library.
 
 ###Local Modifications
-
-**lib/tarte-jsunit/index.js**
-
- - To enable to use `Ascii` and `Async` object.
+None.
 
 ---
 ##JSON-js
