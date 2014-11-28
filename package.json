@@ -1,0 +1,32 @@
+{
+  "name": "gulp-tarte-jsunit",
+  "version": "0.2.0",
+  "description": "Unit test tool for Javascript codes working on Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp unit --js=tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https//github.com/sttk/gulp-tarte-jsunit.git"
+  },
+  "keywords": [
+    "gulp",
+    "test",
+    "unit"
+  ],
+  "author": "Takayuki Sato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sttk/gulp-tarte-jsunit/issues"
+  },
+  "homepage": "https://github.com/sttk/gulp-tarte-jsunit",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-showhelp": "^1.0.2",
+    "gulp-jshint": "^1.9.0",
+    "jshint-stylish": "^1.0.0",
+    "gulp-run-seq": "^1.0.3",
+    "map-stream": "0.0.5"
+  }
+}
