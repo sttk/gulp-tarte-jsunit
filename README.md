@@ -91,7 +91,7 @@ See the file LICENSE in this distribution for more details.
 
 See the file COPYING_DEPEND.md in this distribution for more details.
 
-[npm-image]: http://img.shields.io/badge/npm-v0.2.0-blue.svg
+[npm-image]: http://img.shields.io/badge/npm-v0.2.1-blue.svg
 [npm-url]: https://www.npmjs.org/package/gulp-tarte-jsunit
 [travis-image]: https://travis-ci.org/sttk/gulp-tarte-jsunit.svg?branch=master
 [travis-url]: https://travis-ci.org/sttk/gulp-tarte-jsunit

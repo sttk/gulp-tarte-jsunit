@@ -10,7 +10,7 @@ Check `package.json' in this package about thoese softwares.
 This module is a part of `js.node` package in `tarte` project.
 
 ###Version
-v0.2.0
+v0.2.1
 
 ###Project URL
 [https://sourceforge.net/projects/tarte/](https://sourceforge.net/projects/tarte/)

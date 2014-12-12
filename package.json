@@ -1,6 +1,6 @@
 {
   "name": "gulp-tarte-jsunit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Unit test tool for Javascript codes working on Node.js.",
   "main": "index.js",
   "scripts": {

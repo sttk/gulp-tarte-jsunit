@@ -152,7 +152,7 @@ testsuite('Unit test sample', function() {
    this.scene('#commons', function() {
     this.commons({
      mkar1:function(v0) {
-       this.matrix(this.check, [v0], this.seq(0, v0.length));
+       this.matrix(this.chk, [v0], this.seq(0, v0.length));
      }
     });
     this.scene('Use commons - (1)', {
@@ -160,7 +160,7 @@ testsuite('Unit test sample', function() {
      run:function() {
        this.matrix(this.mkar1, ['abc', 'vwxyz']);
      },
-     check:function(v0, v1) {
+     chk:function(v0, v1) {
        var c = v0.charAt(v1);
        this.equal(this.expects.shift(), c);
      }
@@ -170,13 +170,184 @@ testsuite('Unit test sample', function() {
      run:function() {
        this.matrix(this.mkar1, ['abc', 'xyz']);
      },
-     check:function(v1, v2) {
+     chk:function(v1, v2) {
        var sub = v1.substring(0, v2);
        this.equal(this.expects.shift(), sub);
      }
     });
    });
  });
+ this.testcase('pre/post/repeat/multiple/delay', function() {
+   this.scene('pre & post', {
+     counter:0,
+     pre:function() {
+       this.equal(this.counter, 0, 'counter');
+       this.counter ++;
+     },
+     run:function() {
+       this.equal(this.counter, 1, 'counter');
+       this.counter ++;
+     },
+     post:function() {
+       this.equal(this.counter, 2, 'counter');
+     }
+   });
+   this.scene('repeat', {
+     counter:0, repeat:5,
+     pre:function() {
+       this.equal(this.counter, 0, 'counter');
+       this.counter ++;
+     },
+     run:function() {
+       this.isTrue(this.counter > 0, 'counter');
+       this.isTrue(this.counter < 6, 'counter');
+       this.counter ++;
+     },
+     post:function() {
+       this.equal(this.counter, 6, 'counter');
+     }
+   });
+   this.scene('multiple', {
+     counter:0, multiple:3,
+     pre:function() {
+       this.equal(this.counter, 0, 'counter');
+       this.counter ++;
+     },
+     run:function() {
+       this.isTrue(this.counter > 0, 'counter');
+       this.isTrue(this.counter < 4, 'counter');
+       this.counter ++;
+     },
+     post:function() {
+       this.equal(this.counter, 4, 'counter');
+     }
+   });
+   this.scene('multiple & delay', {
+     counter:0, multiple:3, delay:1000,
+     pre:function() {
+       this.equal(this.counter, 0, 'counter');
+       this.counter ++;
+     },
+     run:function() {
+       this.isTrue(this.counter > 0, 'counter');
+       this.isTrue(this.counter < 4, 'counter');
+       this.counter ++;
+     },
+     post:function() {
+       this.equal(this.counter, 4, 'counter');
+     }
+   });
+ });
+ this.testcase('Test of asynchronous function', function() {
+   this.scene('pre & post', {
+     counter:0,
+     pre:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 0, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     run:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 1, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     post:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 2, 'counter');
+         cb();
+       }, 1000);
+     }
+   });
+   this.scene('repeat', {
+     counter:0, repeat:5,
+     pre:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 0, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     run:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.isTrue(self.counter > 0, 'counter');
+         self.isTrue(self.counter < 6, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     post:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 6, 'counter');
+         cb();
+       }, 1000);
+     }
+   });
+   this.scene('multiple', {
+     counter:0, multiple:3,
+     pre:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 0, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     run:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.isTrue(self.counter > 0, 'counter');
+         self.isTrue(self.counter < 4, 'counter');
+         self.counter ++;
+         cb();
+       }, 1000);
+     },
+     post:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 4, 'counter');
+         cb();
+       }, 1000);
+     }
+   });
+   this.scene('multiple & delay', {
+     counter:0, multiple:3, delay:1000,
+     pre:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 0, 'counter');
+         self.counter ++;
+         cb();
+       }, 2000);
+     },
+     run:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.isTrue(self.counter > 0, 'counter');
+         self.isTrue(self.counter < 4, 'counter');
+         self.counter ++;
+         cb();
+       }, 2000);
+     },
+     post:function(cb) {
+       var self = this;
+       setTimeout(function() {
+         self.equal(self.counter, 4, 'counter');
+         cb();
+       }, 2000);
+     }
+   });
+ });
+
 
 }, (Ascii) ? {
  pre: function() {

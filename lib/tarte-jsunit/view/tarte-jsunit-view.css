@@ -13,7 +13,7 @@ body {
   background-color:#f66;
 }
 
-.emp {
+.empty {
   background-color:#fd8;
 }
 
@@ -230,7 +230,7 @@ div.test_judge {
 }
 
 
-/* for preview page */
+/* for print page */
 
 div.print_header {
   padding:1ex 2ex;
@@ -293,11 +293,11 @@ table.print_case_results tr.r1 {
   background-color:#f9f9f9;
 }
 
-table.print_case_results tr.err {
+table.print_case_results tr.fault {
   background-color:#fdd;
 }
 
-table.print_case_results tr.emp {
+table.print_case_results tr.empty {
   background-color:#fe9;
 }
 
